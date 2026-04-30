@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Сторінка входу. Увійдіть до свого акаунту FASCO за допомогою електронної пошти та пароля або через соціальні мережі.">
+    <title>Вхід - FASCO</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="icon" href="./assets/images/shop_icon.webp">
+</head>
+
+<body class="auth-page">
+    <main class="auth-container">
+        <aside class="auth-image-panel">
+            <img src="./assets/images/signin.webp" alt="Fashion Model">
+        </aside>
+        <section class="auth-form-panel">
+            <div class="auth-form-content">
+
+                <header class="logo font-title">
+                    <a href="index.html">FASCO</a>
+                </header>
+
+                <h1>Вхід у FASCO</h1>
+
+                <div class="social-login">
+                    <button class="social-btn">
+                        <img class="google-icon" src="./assets/images/google-icon.webp" alt="Google">
+                        Увійти через Google
+                    </button>
+                    <button class="social-btn">
+                        <img class="email-icon" src="./assets/images/email-icon.webp" alt="Email">
+                        Увійти через Email
+                    </button>
+                </div>
+
+                <div class="divider">OR</div>
+
+                <form action="#" method="POST">
+                    <div class="input-group">
+                        <input type="email" id="email" name="email" placeholder="Електронна пошта" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" name="password" placeholder="Пароль" required>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn-primary">Увійти</button>
+                        <a href="signup.html" class="btn-secondary">Зареєструватись</a>
+                    </div>
+
+                    <a href="forgetpassword.html" class="forgot-password">Забули пароль?</a>
+                </form>
+
+            </div>
+
+            <footer class="auth-footer">
+                FASCO Умови та Положення
+            </footer>
+        </section>
+    </main>
+
+</body>
+
+</html>

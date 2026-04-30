@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="FASCO - ваш улюблений бренд жіночого одягу. Нові колекції, знижки та пропозиції.">
+    <title>Сайт бренду жіночого fashion-одягу</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="icon" href="./assets/images/shop_icon.webp">
+</head>
+
+<body>
+    <!-- MOBILE MENU — outside nav so position:fixed works -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-logo font-title">FASCO</span>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Закрити">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="index.html" class="mobile-menu-link active"><i
+                    class="fa-solid fa-house"></i><span>Головна</span></a>
+            <a href="shop.html" class="mobile-menu-link"><i class="fa-solid fa-store"></i><span>Магазин</span></a>
+        </nav>
+        <div class="mobile-menu-auth-section">
+            <a href="signin.html" class="mobile-menu-login"><i class="fa-regular fa-user"></i><span>Увійти</span></a>
+            <a href="signup.html" class="mobile-menu-register"><i
+                    class="fa-solid fa-user-plus"></i><span>Зареєструватися</span></a>
+        </div>
+        <div class="mobile-menu-gap"></div>
+        <div class="mobile-menu-tools-section">
+            <a href="#" id="mobileSearchBtn" class="mobile-menu-tool-link"><i
+                    class="fa-solid fa-magnifying-glass"></i><span>Пошук</span></a>
+            <a href="#" id="mobileWishlistBtn" class="mobile-menu-tool-link"><i
+                    class="fa-regular fa-heart"></i><span>Улюблене</span></a>
+            <a href="cart.html" class="mobile-menu-tool-link"><i
+                    class="fa-solid fa-bag-shopping"></i><span>Кошик</span></a>
+        </div>
+    </div>
+
+    <section class="header-section">
+        <header class="header d-flex">
+            <div class="content-wrap d-flex w-full justify-between items-center">
+                <div class="logo font-title">
+                    <a href="index.html" class="title-color">FASCO</a>
+                </div>
+                <div id="burgerMenu" class="burger-menu">
+                    <i id="openIcon" class="fa-solid fa-bars"></i>
+                    <i id="closeIcon" class="fa-solid fa-xmark d-none"></i>
+                </div>
+                <nav id="headerNav" class="header-nav d-flex">
+                    <ul class="desktop-nav-links">
+                        <li><a href="index.html" class="active">Головна</a></li>
+                        <li><a href="shop.html">Пропозиції</a></li>
+                        <li><a href="shop.html">Новинки</a></li>
+                        <li><a href="404.html">Пакети</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="hero-section">
+            <div class="hero-content">
+                <div class="hero-image-container">
+                    <img class="main-hero-img" src="./assets/images/first-main-page.webp" alt="Модель у білому пальто">
+                </div>
+                <div class="hero-image-container">
+                    <img src="./assets/images/second-main-page.webp" alt="Модель у шкіряному плащі">
+                </div>
+                <div class="hero-text-box">
+                    <div class="hero-tag uppercase">мега <span>знижка</span></div>
+                    <h1 class="hero-title uppercase">нова колекція</h1>
+                    <div class="hero-button">
+                        <a href="shop.html" class="btn btn__sale uppercase">Купити зараз</a>
+                    </div>
+                </div>
+                <div class="hero-image-container">
+                    <img src="./assets/images/third-main-page.webp" alt="Модель у джинсовій куртці">
+                </div>
+                <div class="hero-image-container">
+                    <img class="main-hero-img" src="./assets/images/fourth-main-page.webp" alt="Модель у сукні">
+                </div>
+            </div>
+            <div class="hero-section-logos">
+                <!-- Рядок 1: LTR (рухається вправо) — мобайл і десктоп -->
+                <div class="logos-marquee logos-ltr">
+                    <div class="logos-track">
+                        <img class="hero-logo" src="./assets/images/chanel.webp" alt="Chanel">
+                        <img class="hero-logo" src="./assets/images/louisvuitton.webp" alt="Louis Vuitton">
+                        <img class="hero-logo" src="./assets/images/prada.webp" alt="Prada">
+                        <img class="hero-logo" src="./assets/images/calvin.webp" alt="Calvin Klein">
+                        <img class="hero-logo" src="./assets/images/denim.webp" alt="Denim">
+                        <!-- Дублікат для безшовного циклу -->
+                        <img class="hero-logo" src="./assets/images/chanel.webp" alt="Chanel">
+                        <img class="hero-logo" src="./assets/images/louisvuitton.webp" alt="Louis Vuitton">
+                        <img class="hero-logo" src="./assets/images/prada.webp" alt="Prada">
+                        <img class="hero-logo" src="./assets/images/calvin.webp" alt="Calvin Klein">
+                        <img class="hero-logo" src="./assets/images/denim.webp" alt="Denim">
+                    </div>
+                </div>
+                <!-- Рядок 2: RTL (рухається вліво) — тільки мобайл -->
+                <div class="logos-marquee logos-rtl">
+                    <div class="logos-track">
+                        <img class="hero-logo" src="./assets/images/denim.webp" alt="Denim">
+                        <img class="hero-logo" src="./assets/images/calvin.webp" alt="Calvin Klein">
+                        <img class="hero-logo" src="./assets/images/prada.webp" alt="Prada">
+                        <img class="hero-logo" src="./assets/images/louisvuitton.webp" alt="Louis Vuitton">
+                        <img class="hero-logo" src="./assets/images/chanel.webp" alt="Chanel">
+                        <img class="hero-logo" src="./assets/images/denim.webp" alt="Denim">
+                        <img class="hero-logo" src="./assets/images/calvin.webp" alt="Calvin Klein">
+                        <img class="hero-logo" src="./assets/images/prada.webp" alt="Prada">
+                        <img class="hero-logo" src="./assets/images/louisvuitton.webp" alt="Louis Vuitton">
+                        <img class="hero-logo" src="./assets/images/chanel.webp" alt="Chanel">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main>
+        <section class="season-deal">
+            <div class="season-wrapper">
+                <div class="deal-info-container">
+                    <div class="text-box">
+                        <h2>Пропозиції місяця</h2>
+                        <p class="regular-text">Відкрийте для себе унікальні пропозиції цього місяця!
+                            Наші ексклюзивні моделі створені для сучасних жінок, які цінують стиль та комфорт.
+                            Оберіть ідеальний образ для будь-якої нагоди.
+                        </p>
+                    </div>
+                    <a class="btn btn-season" href="shop.html">Купити зараз</a>
+                    <div class="timer-container">
+                        <h3>Поспішайте, перш ніж буде пізно!</h3>
+                        <div class="timer-wrapper">
+                            <div class="time-box">
+                                <p class="time" id="timerDays">02</p>
+                                <p class="time-gap">Дні</p>
+                            </div>
+                            <div class="time-box">
+                                <p class="time" id="timerHours">06</p>
+                                <p class="time-gap">Год</p>
+                            </div>
+                            <div class="time-box">
+                                <p class="time" id="timerMinutes">05</p>
+                                <p class="time-gap">Хв</p>
+                            </div>
+                            <div class="time-box">
+                                <p class="time" id="timerSeconds">30</p>
+                                <p class="time-gap">Сек</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="deal-gallery" id="dealGallery">
+                    <!-- Трек слайдів — JS рухає через translateX -->
+                    <div class="deal-track" id="dealTrack">
+                        <div class="deal-slide is-active" data-name="Весняний розпродаж" data-discount="30">
+                            <img src="./assets/images/shop-spring-blazer-1-model.webp" alt="Весняний розпродаж">
+                        </div>
+                        <div class="deal-slide" data-name="Літня колекція" data-discount="25">
+                            <img src="./assets/images/shop-tshirt-3-model.webp" alt="Літня колекція">
+                        </div>
+                        <div class="deal-slide" data-name="Ексклюзивний дроп" data-discount="40">
+                            <img src="./assets/images/shop-jacket-rockstar-2-model.webp" alt="Ексклюзивний дроп">
+                        </div>
+                    </div>
+
+                    <!-- Плашка з назвою акції — над активним слайдом -->
+                    <div class="sale-box">
+                        <div class="sale-name">
+                            <p id="dealSlideNum">1</p>
+                            <div class="dash"></div>
+                            <p id="dealSaleName">Весняний розпродаж</p>
+                        </div>
+                        <p class="sale" id="dealDiscount">ЗНИЖКА 30%</p>
+                    </div>
+                </div>
+
+                <!-- Навігація під галереєю -->
+                <div class="deal-controls">
+                    <div class="swiper">
+                        <img class="swiper-arrow" id="dealPrev" src="./assets/icons/arrow-left.svg"
+                            alt="Вліво">
+                        <img class="swiper-arrow" id="dealNext" src="./assets/icons/arrow-right.svg"
+                            alt="Вправо">
+                    </div>
+                    <div class="progress-galery" id="dealDots">
+                        <div class="progress-highlight"></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="new">
+            <div class="text-box">
+                <h2>Нові надходження</h2>
+                <p class="regular-text">Знайомтеся з нашими свіжими надходженнями! Кожна модель унікальна та створена з
+                    любов'ю до деталей.
+                    Від робочого дресу до вечірніх нарядів - у нас є все!
+                </p>
+            </div>
+            <div class="new-cards-wrapper">
+                <a class="new-card" href="product.html?id=13">
+                    <div class="new-card-image-wrap">
+                        <img src="./assets/images/shop-evening-dress-1-front.webp" alt="Вечірня сукня">
+                        <span class="sale-badge-small">Sale</span>
+                    </div>
+                    <div class="new-info">
+                        <div class="product-info-wrap">
+                            <div class="product-name-wrap">
+                                <h3 class="product-name">Вечірня сукня</h3>
+                                <p class="product-producer">FASCO</p>
+                            </div>
+                            <img src="./assets/icons/stars.svg" alt="Рейтинг">
+                        </div>
+                        <p class="amount-reviews">(4.6 тис.) Відгуків клієнтів</p>
+                        <div class="new-price-box">
+                            <div class="price-line"><p class="price">$65.00</p><span class="old-price">$75.99</span></div>
+                            <p class="availability">Майже розпродано</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="new-card" href="product.html?id=11">
+                    <div class="new-card-image-wrap">
+                        <img src="./assets/images/shop-spring-blazer-1-front.webp" alt="Весняний піджак">
+                        <span class="sale-badge-small">Sale</span>
+                    </div>
+                    <div class="new-info">
+                        <div class="product-info-wrap">
+                            <div class="product-name-wrap">
+                                <h3 class="product-name">Весняний піджак</h3>
+                                <p class="product-producer">FASCO</p>
+                            </div>
+                            <img src="./assets/icons/stars.svg" alt="Рейтинг">
+                        </div>
+                        <p class="amount-reviews">(2.8 тис.) Відгуків клієнтів</p>
+                        <div class="new-price-box">
+                            <div class="price-line"><p class="price">$135.50</p><span class="old-price">$159.99</span></div>
+                            <p class="availability">Хіт продажу</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="new-card" href="product.html?id=17">
+                    <div class="new-card-image-wrap">
+                        <img src="./assets/images/shop-sweater-1-front.webp" alt="В'язаний светр та шапка">
+                        <span class="sale-badge-small">Sale</span>
+                    </div>
+                    <div class="new-info">
+                        <div class="product-info-wrap">
+                            <div class="product-name-wrap">
+                                <h3 class="product-name">В'язаний светр та шапка</h3>
+                                <p class="product-producer">FASCO</p>
+                            </div>
+                            <img src="./assets/icons/stars.svg" alt="Рейтинг">
+                        </div>
+                        <p class="amount-reviews">(4.1 тис.) Відгуків клієнтів</p>
+                        <div class="new-price-box">
+                            <div class="price-line"><p class="price">$49.90</p><span class="old-price">$100.00</span></div>
+                            <p class="availability">В наявності</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="new-card" href="product.html?id=9">
+                    <div class="new-card-image-wrap">
+                        <img src="./assets/images/shop-dress-dot-1-front.webp" alt="Сукня в горошок">
+                        <span class="sale-badge-small">Sale</span>
+                    </div>
+                    <div class="new-info">
+                        <div class="product-info-wrap">
+                            <div class="product-name-wrap">
+                                <h3 class="product-name">Сукня в горошок</h3>
+                                <p class="product-producer">FASCO</p>
+                            </div>
+                            <img src="./assets/icons/stars.svg" alt="Рейтинг">
+                        </div>
+                        <p class="amount-reviews">(5.3 тис.) Відгуків клієнтів</p>
+                        <div class="new-price-box">
+                            <div class="price-line"><p class="price">$20.00</p><span class="old-price">$25.99</span></div>
+                            <p class="availability">Майже розпродано</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="new-card" href="product.html?id=21">
+                    <div class="new-card-image-wrap">
+                        <img src="./assets/images/shop-suit-1-front.webp" alt="Брючний костюм">
+                    </div>
+                    <div class="new-info">
+                        <div class="product-info-wrap">
+                            <div class="product-name-wrap">
+                                <h3 class="product-name">Брючний костюм</h3>
+                                <p class="product-producer">FASCO</p>
+                            </div>
+                            <img src="./assets/icons/stars.svg" alt="Рейтинг">
+                        </div>
+                        <p class="amount-reviews">(1.9 тис.) Відгуків клієнтів</p>
+                        <div class="new-price-box">
+                            <p class="price">$115.00</p>
+                            <p class="availability">Новинка</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="new-card" href="product.html?id=16">
+                    <div class="new-card-image-wrap">
+                        <img src="./assets/images/shop-blouse-1-front.webp" alt="Бавовняна блуза">
+                        <span class="sale-badge-small">Sale</span>
+                    </div>
+                    <div class="new-info">
+                        <div class="product-info-wrap">
+                            <div class="product-name-wrap">
+                                <h3 class="product-name">Бавовняна блуза</h3>
+                                <p class="product-producer">FASCO</p>
+                            </div>
+                            <img src="./assets/icons/stars.svg" alt="Рейтинг">
+                        </div>
+                        <p class="amount-reviews">(3.7 тис.) Відгуків клієнтів</p>
+                        <div class="new-price-box">
+                            <div class="price-line"><p class="price">$42.50</p><span class="old-price">$54.99</span></div>
+                            <p class="availability">В наявності</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <a class="btn btn-new" href="shop.html">Дивитися більше</a>
+        </section>
+        <section class="promotion">
+            <div class="promotion-wrapper">
+                <img class="bg-promotion" src="./assets/images/promotion.webp" alt="Модель Peaky Blinders">
+                <div class="text-box promotion-text-box">
+                    <p class="regular-text">Жіноча колекція</p>
+                    <h2>Peaky Blinders</h2>
+                    <p class="description">Ексклюзивна колекція</p>
+                    <p class="regular-text">Натхненна легендарним серіалом, ця колекція поєднує в собі елегантність
+                        1920-х років із сучасним стилем. Ідеальний вибір для
+                        впевнених у собі жінок, які цінують якість та унікальність.
+                    </p>
+                    <div class="size-wrapper">
+                        <p class="regular-text">Розмір:</p>
+                        <p class="promotion-size">M</p>
+                    </div>
+                    <p class="promotion-price">$100.<span>00</span></p>
+                    <a class="btn" href="shop.html">Купити зараз</a>
+                </div>
+            </div>
+            <div class="advantages-wrapper">
+                <div class="advantage-card">
+                    <img src="./assets/icons/quality.svg" alt="Якість">
+                    <div class="advantage-text-box">
+                        <h4>Висока якість</h4>
+                        <p>виготовлено з найкращих матеріалів</p>
+                    </div>
+                </div>
+                <div class="advantage-card">
+                    <img src="./assets/icons/warrany.svg" alt="Гарантія">
+                    <div class="advantage-text-box">
+                        <h4>Гарантія</h4>
+                        <p>Понад 2 роки</p>
+                    </div>
+                </div>
+                <div class="advantage-card">
+                    <img src="./assets/icons/shipping.svg" alt="Доставка">
+                    <div class="advantage-text-box">
+                        <h4>Безкоштовна доставка</h4>
+                        <p>Замовлення від 150 $</p>
+                    </div>
+                </div>
+                <div class="advantage-card">
+                    <img src="./assets/icons/support.svg" alt="Підтримка">
+                    <div class="advantage-text-box">
+                        <h4>Підтримка 24/7</h4>
+                        <p>Цілодобова підтримка</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="instagram">
+            <div class="text-box">
+                <h2>Слідкуйте за нами в Instagram</h2>
+                <p class="regular-text">Приєднуйтесь до нашого інстаграм! Дивіться за кулісами створення колекцій,
+                    отримуйте стильні поради та будьте першими, хто дізнається про новинки та акції.
+                </p>
+            </div>
+            <!-- Замінити <div class="instagram-gallery"> на: -->
+            <div class="instagram-gallery-outer">
+                <div class="instagram-gallery" id="instaGallery">
+                    <img src="./assets/images/insta-1.webp" alt="Instagram фото 1">
+                    <img src="./assets/images/insta-2.webp" alt="Instagram фото 2">
+                    <img src="./assets/images/insta-3.webp" alt="Instagram фото 3">
+                    <img src="./assets/images/insta-4.webp" alt="Instagram фото 4">
+                    <img src="./assets/images/insta-5.webp" alt="Instagram фото 5">
+                    <img src="./assets/images/insta-6.webp" alt="Instagram фото 6">
+                    <img src="./assets/images/insta-7.webp" alt="Instagram фото 7">
+                </div>
+            </div>
+        </section>
+        <section class="reviews">
+            <div class="text-box">
+                <h2>Ось що кажуть наші клієнти</h2>
+                <p class="regular-text">Ми пишаємося кожним відгуком наших клієнтів. Ваш досвід та враження допомагають
+                    нам ставати кращими щодня.</p>
+            </div>
+            <div class="reviews-wrapper">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="review-card prev">
+                            <img class="reviewer-photo" src="./assets/images/review-1.webp" alt="Олена К.">
+                            <div class="review-info">
+                                <p class="review-text">"Я вражена якістю! Сукня сидить ідеально, а тканина приємна до
+                                    тіла. Обов'язково придбаю ще щось з вашої колекції. Дякую за швидку доставку!"</p>
+                                <img class="review-stars" src="./assets/icons/stars.svg" alt="5 зірок">
+                                <div class="review-autor-container">
+                                    <h3 class="reviewer-name">Олена К.</h3>
+                                    <p class="reviewer-job">Менеджерка</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-card active">
+                            <img class="reviewer-photo" src="./assets/images/review-2.webp" alt="Марія П.">
+                            <div class="review-info">
+                                <p class="review-text">"Дуже задоволений покупкою! Все прийшло швидко, а якість тканини
+                                    перевершила мої очікування. Обов'язково рекомендую цей магазин."</p>
+                                <img class="review-stars" src="./assets/icons/stars.svg" alt="5 зірок">
+                                <div class="review-autor-container">
+                                    <h3 class="reviewer-name">Антон П.</h3>
+                                    <p class="reviewer-job">Дизайнер</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-card next">
+                            <img class="reviewer-photo" src="./assets/images/review-3.webp" alt="Анна С.">
+                            <div class="review-info">
+                                <p class="review-text">"Чудовий сервіс! Консультанти допомогли підібрати розмір, а сукня
+                                    виглядає просто фантастично. Тепер це мій улюблений магазин одягу!"</p>
+                                <img class="review-stars" src="./assets/icons/stars.svg" alt="5 зірок">
+                                <div class="review-autor-container">
+                                    <h3 class="reviewer-name">Анна С.</h3>
+                                    <p class="reviewer-job">Вчителька</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reviews-btn-container">
+                <img class="nav-btn prev" src="./assets/icons/arrow-left.svg" alt="Назад">
+                <img class="nav-btn next" src="./assets/icons/arrow-right.svg" alt="Вперед">
+            </div>
+        </section>
+        <section class="subscribe">
+            <img class="subscribe-photos" src="./assets/images/subscribe-1.webp" alt="Фото підписки">
+            <div class="subscribe-wrapper">
+                <div class="subscribe-card">
+                    <div class="text-box">
+                        <h2>Підпишіться на нашу розсилку</h2>
+                        <p class="regular-text">Отримуйте першими інформацію про нові колекції, ексклюзивні знижки та
+                            стильні поради. <br>
+                            Тільки корисна інформація без спаму!</p>
+                    </div>
+                    <form>
+                        <input class="company-email" type="email" placeholder="michael@ymail.com">
+                    </form>
+                </div>
+                <a class="btn btn-subscribe" href="#">Підписатися зараз</a>
+            </div>
+            <img class="subscribe-photos" src="./assets/images/subscribe-2.webp" alt="Фото підписки">
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="logo font-title">
+                <a href="index.html" class="title-color">FASCO</a>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#" id="supportBtn">Центр підтримки</a></li>
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="#">Контакти</a></li>
+                    <li><a href="#">Кар'єра</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Часті запитання</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="reserved-rights">Copyright © 2026 FASCO. Всі права захищені.</p>
+    </footer>
+    <div id="myModal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="font-title">Напишіть нам</h2>
+            <p class="regular-text">Маєте запитання? Заповніть форму, і ми зв'яжемося з вами!</p>
+
+            <form class="modal-form">
+                <input type="text" placeholder="Ваше ім'я" required>
+                <input type="email" placeholder="Ваш Email" required>
+                <textarea placeholder="Ваше повідомлення" rows="4" required></textarea>
+                <button type="submit" class="btn btn-modal">Надіслати</button>
+            </form>
+        </div>
+    </div>
+    <div class="sticky-items">
+        <div class="sticky-item sticky-item-circle">
+            <a href="#" class="sticky-link" id="scrollToTop">
+                <img src="assets/icons/Vector.svg" alt="Scroll to top" class="sticky-img">
+            </a>
+        </div>
+        <div class="sticky-item sticky-item-square sticky-cart" id="stickyCartBtn">
+            <a href="#" class="sticky-link" id="stickyCartLink" aria-label="Кошик">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="sticky-cart-count" id="stickyCartCount" style="display:none;">0</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- WISHLIST DRAWER -->
+    <div id="wishlistDrawer" class="wishlist-drawer">
+        <div class="wishlist-drawer-overlay" id="wishlistDrawerOverlay"></div>
+        <div class="wishlist-drawer-panel">
+            <div class="wishlist-drawer-header">
+                <div class="wishlist-drawer-title">
+                    <i class="fa-regular fa-heart"></i>
+                    <h3>Обране</h3>
+                    <span class="wishlist-items-count" id="wishlistItemsCount">0</span>
+                </div>
+                <button class="wishlist-drawer-close" id="wishlistDrawerClose"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="wishlist-drawer-items" id="wishlistDrawerItems">
+                <div class="wishlist-empty" id="wishlistEmpty">
+                    <div class="wishlist-empty-icon"><i class="fa-regular fa-heart"></i></div>
+                    <p>Ваш список обраного порожній</p>
+                    <a href="shop.html" class="btn-browse-products">Переглянути товари</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH OVERLAY -->
+    <div id="searchOverlay" class="search-overlay">
+        <div class="search-overlay-inner">
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass search-icon-inner"></i>
+                <input type="text" id="searchInput" placeholder="Пошук товарів..." autocomplete="off">
+                <button id="searchClose" class="search-close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="search-results-wrap" id="searchResultsWrap">
+                <p class="search-hint" id="searchHint">Введіть назву товару для пошуку...</p>
+                <div class="search-results-grid" id="searchResultsGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART DRAWER -->
+    <div id="cartDrawer" class="cart-drawer">
+        <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+        <div class="cart-drawer-panel">
+            <div class="cart-drawer-header">
+                <div class="cart-drawer-title">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <h3>Ваш кошик</h3>
+                    <span class="cart-items-count" id="cartItemsCount">0</span>
+                </div>
+                <button class="cart-drawer-close" id="cartDrawerClose" aria-label="Закрити">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="cart-shipping-bar">
+                <p class="cart-shipping-text" id="cartShippingText">Додайте ще <strong>$75.00</strong> для
+                    <strong>безкоштовної доставки!</strong>
+                </p>
+                <div class="shipping-progress-track">
+                    <div class="shipping-progress-fill" id="shippingProgressFill" style="width:0%"></div>
+                </div>
+            </div>
+            <div class="cart-drawer-items" id="cartDrawerItems">
+                <div class="cart-empty" id="cartEmpty">
+                    <div class="cart-empty-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                    <p>Ваш кошик порожній</p>
+                    <a href="shop.html" class="btn-browse-products">Переглянути товари</a>
+                </div>
+            </div>
+            <div class="cart-drawer-footer" id="cartDrawerFooter">
+                <div class="cart-totals">
+                    <div class="cart-total-row">
+                        <span>Підсумок</span>
+                        <span id="cartSubtotal" class="cart-total-value">$0.00</span>
+                    </div>
+                    <div class="cart-total-row cart-total-row--muted">
+                        <span>Доставка</span>
+                        <span id="cartShippingCost">Розраховується при оформленні</span>
+                    </div>
+                </div>
+                <div class="cart-footer-divider"></div>
+                <a href="checkout.html" class="btn btn-checkout-drawer"><i class="fa-solid fa-lock"></i> Оформити замовлення</a>
+                <a href="cart.html" class="btn btn-go-to-cart" id="continueShoppingBtn">
+                    <i class="fa-solid fa-bag-shopping"></i> Перейти до кошика
+                </a>
+                <p class="cart-secure-note"><i class="fa-solid fa-shield-halved"></i> Безпечне та зашифроване оформлення
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="assets/scripts/script.js"></script>
+</body>
+
+</html>

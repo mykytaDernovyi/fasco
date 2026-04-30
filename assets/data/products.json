@@ -1,0 +1,721 @@
+[
+    {
+        "id": 1,
+        "name": "Капелюх",
+        "image": "./assets/images/shop-hat-1-front.webp",
+        "images": [
+            "./assets/images/shop-hat-1-front.webp",
+            "./assets/images/shop-hat-1-model.webp",
+            "./assets/images/shop-hat-1-back.webp",
+            "./assets/images/shop-hat-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#CC0000": [
+                "./assets/images/shop-hat-1-front.webp",
+                "./assets/images/shop-hat-1-model.webp",
+                "./assets/images/shop-hat-1-back.webp",
+                "./assets/images/shop-hat-1-closeup.webp"
+            ],
+            "#000000": [
+                "./assets/images/shop-hat-2-front.webp",
+                "./assets/images/shop-hat-2-model.webp",
+                "./assets/images/shop-hat-2-back.webp",
+                "./assets/images/shop-hat-2-closeup.webp"
+            ],
+            "#F5DEB3": [
+                "./assets/images/shop-hat-3-front.webp",
+                "./assets/images/shop-hat-3-model.webp",
+                "./assets/images/shop-hat-3-back.webp",
+                "./assets/images/shop-hat-3-closeup.webp"
+            ]
+        },
+        "price": 38.0,
+        "swatches": [
+            "#CC0000",
+            "#000000",
+            "#F5DEB3"
+        ],
+        "description": "Класичний капелюх із широкими полями, ідеально підходить для сонячного дня або як яскравий акцент.",
+        "collections": [
+            "accessories"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Льняна сорочка",
+        "image": "./assets/images/shop-shirt-1-front.webp",
+        "images": [
+            "./assets/images/shop-shirt-1-front.webp",
+            "./assets/images/shop-shirt-1-model.webp",
+            "./assets/images/shop-shirt-1-back.webp",
+            "./assets/images/shop-shirt-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#8DB4D2": [
+                "./assets/images/shop-shirt-1-front.webp",
+                "./assets/images/shop-shirt-1-model.webp",
+                "./assets/images/shop-shirt-1-back.webp",
+                "./assets/images/shop-shirt-1-closeup.webp"
+            ],
+            "#FFD1DC": [
+                "./assets/images/shop-shirt-2-front.webp",
+                "./assets/images/shop-shirt-2-model.webp",
+                "./assets/images/shop-shirt-2-back.webp",
+                "./assets/images/shop-shirt-2-closeup.webp"
+            ]
+        },
+        "price": 60.0,
+        "swatches": [
+            "#8DB4D2",
+            "#FFD1DC"
+        ],
+        "description": "Легка та дихаюча сорочка з суміші льону, незамінна річ у вашому літньому гардеробі.",
+        "collections": [
+            "spring-sale",
+            "summer"
+        ],
+        "oldPrice": 75.0
+    },
+    {
+        "id": 3,
+        "name": "Пальто з довгим рукавом",
+        "image": "./assets/images/shop-coat-1-front.webp",
+        "images": [
+            "./assets/images/shop-coat-1-front.webp",
+            "./assets/images/shop-coat-1-model.webp",
+            "./assets/images/shop-coat-1-back.webp",
+            "./assets/images/shop-coat-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#EBE6DB": [
+                "./assets/images/shop-coat-1-front.webp",
+                "./assets/images/shop-coat-1-model.webp",
+                "./assets/images/shop-coat-1-back.webp",
+                "./assets/images/shop-coat-1-closeup.webp"
+            ],
+            "#C1E1C1": [
+                "./assets/images/shop-coat-2-front.webp",
+                "./assets/images/shop-coat-2-model.webp",
+                "./assets/images/shop-coat-2-back.webp",
+                "./assets/images/shop-coat-2-closeup.webp"
+            ]
+        },
+        "price": 105.0,
+        "swatches": [
+            "#EBE6DB",
+            "#C1E1C1"
+        ],
+        "description": "Елегантне демісезонне пальто з довгими рукавами для прохолодної погоди та стильних образів.",
+        "collections": [
+            "exclusive"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Джинсовий капелюх",
+        "image": "./assets/images/shop-jeans-hat-1-front.webp",
+        "images": [
+            "./assets/images/shop-jeans-hat-1-front.webp",
+            "./assets/images/shop-jeans-hat-1-model.webp",
+            "./assets/images/shop-jeans-hat-1-back.webp",
+            "./assets/images/shop-jeans-hat-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#B1C5D4": [
+                "./assets/images/shop-jeans-hat-1-front.webp",
+                "./assets/images/shop-jeans-hat-1-model.webp",
+                "./assets/images/shop-jeans-hat-1-back.webp",
+                "./assets/images/shop-jeans-hat-1-closeup.webp"
+            ],
+            "#063E66": [
+                "./assets/images/shop-jeans-hat-2-front.webp",
+                "./assets/images/shop-jeans-hat-2-model.webp",
+                "./assets/images/shop-jeans-hat-2-back.webp",
+                "./assets/images/shop-jeans-hat-2-closeup.webp"
+            ]
+        },
+        "price": 20.0,
+        "oldPrice": 25.0,
+        "swatches": [
+            "#B1C5D4",
+            "#063E66"
+        ],
+        "description": "Стильний джинсовий капелюх-панама у вінтажному стилі.",
+        "collections": [
+            "accessories"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Льняний топ",
+        "image": "./assets/images/shop-top-1-front.webp",
+        "images": [
+            "./assets/images/shop-top-1-front.webp",
+            "./assets/images/shop-top-1-model.webp",
+            "./assets/images/shop-top-1-back.webp",
+            "./assets/images/shop-top-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#C1E1C1": [
+                "./assets/images/shop-top-1-front.webp",
+                "./assets/images/shop-top-1-model.webp",
+                "./assets/images/shop-top-1-back.webp",
+                "./assets/images/shop-top-1-closeup.webp"
+            ],
+            "#ffffff": [
+                "./assets/images/shop-top-2-front.webp",
+                "./assets/images/shop-top-2-model.webp",
+                "./assets/images/shop-top-2-back.webp",
+                "./assets/images/shop-top-2-closeup.webp"
+            ]
+        },
+        "price": 25.0,
+        "swatches": [
+            "#C1E1C1",
+            "#ffffff"
+        ],
+        "description": "Базовий та зручний лляний топ на кожен день. Must-have для спекотного літа.",
+        "collections": [
+            "spring-sale",
+            "summer"
+        ],
+        "oldPrice": 32.0
+    },
+    {
+        "id": 6,
+        "name": "Оверсайз футболка",
+        "image": "./assets/images/shop-tshirt-2-front.webp",
+        "images": [
+            "./assets/images/shop-tshirt-2-front.webp",
+            "./assets/images/shop-tshirt-2-model.webp",
+            "./assets/images/shop-tshirt-2-back.webp",
+            "./assets/images/shop-tshirt-2-closeup.webp"
+        ],
+        "colorImages": {
+            "#FFD1DC": [
+                "./assets/images/shop-tshirt-1-front.webp",
+                "./assets/images/shop-tshirt-1-model.webp",
+                "./assets/images/shop-tshirt-1-back.webp",
+                "./assets/images/shop-tshirt-1-closeup.webp"
+            ],
+            "#C6AEC7": [
+                "./assets/images/shop-tshirt-2-front.webp",
+                "./assets/images/shop-tshirt-2-model.webp",
+                "./assets/images/shop-tshirt-2-back.webp",
+                "./assets/images/shop-tshirt-2-closeup.webp"
+            ],
+            "#ffffff": [
+                "./assets/images/shop-tshirt-3-front.webp",
+                "./assets/images/shop-tshirt-3-model.webp",
+                "./assets/images/shop-tshirt-3-back.webp",
+                "./assets/images/shop-tshirt-3-closeup.webp"
+            ]
+        },
+        "price": 52.0,
+        "oldPrice": 75.0,
+        "swatches": [
+            "#FFD1DC",
+            "#C6AEC7",
+            "#ffffff"
+        ],
+        "description": "Оверсайз футболка з яскравим принтом. Створена для самовираження.",
+        "collections": [
+            "summer"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Поляризовані окуляри",
+        "image": "./assets/images/shop-glasses-1-front.webp",
+        "images": [
+            "./assets/images/shop-glasses-1-front.webp",
+            "./assets/images/shop-glasses-1-model.webp",
+            "./assets/images/shop-glasses-1-back.webp",
+            "./assets/images/shop-glasses-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#000000": [
+                "./assets/images/shop-glasses-1-front.webp",
+                "./assets/images/shop-glasses-1-model.webp",
+                "./assets/images/shop-glasses-1-back.webp",
+                "./assets/images/shop-glasses-1-closeup.webp"
+            ]
+        },
+        "price": 18.0,
+        "oldPrice": 21.0,
+        "swatches": [
+            "#000000"
+        ],
+        "description": "Сонцезахисні окуляри з поляризацією.",
+        "collections": [
+            "accessories",
+            "summer"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Куртка 'Rockstar'",
+        "image": "./assets/images/shop-jacket-rockstar-1-front.webp",
+        "images": [
+            "./assets/images/shop-jacket-rockstar-1-front.webp",
+            "./assets/images/shop-jacket-rockstar-1-model.webp",
+            "./assets/images/shop-jacket-rockstar-1-back.webp",
+            "./assets/images/shop-jacket-rockstar-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#C6AEC7": [
+                "./assets/images/shop-jacket-rockstar-1-front.webp",
+                "./assets/images/shop-jacket-rockstar-1-model.webp",
+                "./assets/images/shop-jacket-rockstar-1-back.webp",
+                "./assets/images/shop-jacket-rockstar-1-closeup.webp"
+            ],
+            "#BEDCE3": [
+                "./assets/images/shop-jacket-rockstar-2-front.webp",
+                "./assets/images/shop-jacket-rockstar-2-model.webp",
+                "./assets/images/shop-jacket-rockstar-2-back.webp",
+                "./assets/images/shop-jacket-rockstar-2-closeup.webp"
+            ]
+        },
+        "price": 320.0,
+        "swatches": [
+            "#C6AEC7",
+            "#BEDCE3"
+        ],
+        "description": "Блискуча куртка в стилі Rockstar для найяскравіших подій.",
+        "collections": [
+            "exclusive"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Сукня в горошок",
+        "image": "./assets/images/shop-dress-dot-1-front.webp",
+        "images": [
+            "./assets/images/shop-dress-dot-1-front.webp",
+            "./assets/images/shop-dress-dot-1-model.webp",
+            "./assets/images/shop-dress-dot-1-back.webp",
+            "./assets/images/shop-dress-dot-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#063E66": [
+                "./assets/images/shop-dress-dot-1-front.webp",
+                "./assets/images/shop-dress-dot-1-model.webp",
+                "./assets/images/shop-dress-dot-1-back.webp",
+                "./assets/images/shop-dress-dot-1-closeup.webp"
+            ],
+            "#000000": [
+                "./assets/images/shop-dress-dot-2-front.webp",
+                "./assets/images/shop-dress-dot-2-model.webp",
+                "./assets/images/shop-dress-dot-2-back.webp",
+                "./assets/images/shop-dress-dot-2-closeup.webp"
+            ]
+        },
+        "price": 20.0,
+        "swatches": [
+            "#063E66",
+            "#000000"
+        ],
+        "description": "Романтична чорна сукня в дрібний горошок з прозорими рукавами.",
+        "collections": [
+            "spring-sale",
+            "summer"
+        ],
+        "oldPrice": 25.99
+    },
+    {
+        "id": 10,
+        "name": "Елегантне пальто",
+        "image": "./assets/images/shop-elegant-coat-2-front.webp",
+        "images": [
+            "./assets/images/shop-elegant-coat-2-front.webp",
+            "./assets/images/shop-elegant-coat-2-model.webp",
+            "./assets/images/shop-elegant-coat-2-back.webp",
+            "./assets/images/shop-elegant-coat-2-closeup.webp"
+        ],
+        "colorImages": {
+            "#EBE6DB": [
+                "./assets/images/shop-elegant-coat-1-front.webp",
+                "./assets/images/shop-elegant-coat-1-model.webp",
+                "./assets/images/shop-elegant-coat-1-back.webp",
+                "./assets/images/shop-elegant-coat-1-closeup.webp"
+            ],
+            "#708090": [
+                "./assets/images/shop-elegant-coat-2-front.webp",
+                "./assets/images/shop-elegant-coat-2-model.webp",
+                "./assets/images/shop-elegant-coat-2-back.webp",
+                "./assets/images/shop-elegant-coat-2-closeup.webp"
+            ]
+        },
+        "price": 100.0,
+        "oldPrice": 120.0,
+        "swatches": [
+            "#EBE6DB",
+            "#708090"
+        ],
+        "description": "Класичне пальто. Ідеальна інвестиція у ваш гардероб.",
+        "collections": [
+            "exclusive"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Весняний піджак",
+        "image": "./assets/images/shop-spring-blazer-1-front.webp",
+        "images": [
+            "./assets/images/shop-spring-blazer-1-front.webp",
+            "./assets/images/shop-spring-blazer-1-model.webp",
+            "./assets/images/shop-spring-blazer-1-back.webp",
+            "./assets/images/shop-spring-blazer-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#FFC0CB": [
+                "./assets/images/shop-spring-blazer-1-front.webp",
+                "./assets/images/shop-spring-blazer-1-model.webp",
+                "./assets/images/shop-spring-blazer-1-back.webp",
+                "./assets/images/shop-spring-blazer-1-closeup.webp"
+            ],
+            "#36454F": [
+                "./assets/images/shop-spring-blazer-2-front.webp",
+                "./assets/images/shop-spring-blazer-2-model.webp",
+                "./assets/images/shop-spring-blazer-2-back.webp",
+                "./assets/images/shop-spring-blazer-2-closeup.webp"
+            ]
+        },
+        "price": 135.5,
+        "swatches": [
+            "#FFC0CB",
+            "#36454F"
+        ],
+        "description": "Легкий весняний піджак.",
+        "collections": [
+            "exclusive",
+            "spring-sale"
+        ],
+        "oldPrice": 159.99
+    },
+    {
+        "id": 12,
+        "name": "Сукня-футболка",
+        "image": "./assets/images/shop-dress-tshirt-1-front.webp",
+        "images": [
+            "./assets/images/shop-dress-tshirt-1-front.webp",
+            "./assets/images/shop-dress-tshirt-1-model.webp",
+            "./assets/images/shop-dress-tshirt-1-back.webp",
+            "./assets/images/shop-dress-tshirt-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#D2B48C": [
+                "./assets/images/shop-dress-tshirt-1-front.webp",
+                "./assets/images/shop-dress-tshirt-1-model.webp",
+                "./assets/images/shop-dress-tshirt-1-back.webp",
+                "./assets/images/shop-dress-tshirt-1-closeup.webp"
+            ],
+            "#FFFACD": [
+                "./assets/images/shop-dress-tshirt-2-front.webp",
+                "./assets/images/shop-dress-tshirt-2-model.webp",
+                "./assets/images/shop-dress-tshirt-2-back.webp",
+                "./assets/images/shop-dress-tshirt-2-closeup.webp"
+            ]
+        },
+        "price": 45.0,
+        "swatches": [
+            "#D2B48C",
+            "#FFFACD"
+        ],
+        "description": "Зручна сукня-футболка з поясом.",
+        "collections": [
+            "summer"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Вечірня сукня",
+        "image": "./assets/images/shop-evening-dress-1-front.webp",
+        "images": [
+            "./assets/images/shop-evening-dress-1-front.webp",
+            "./assets/images/shop-evening-dress-1-model.webp",
+            "./assets/images/shop-evening-dress-1-back.webp",
+            "./assets/images/shop-evening-dress-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#FFFFFF": [
+                "./assets/images/shop-evening-dress-1-front.webp",
+                "./assets/images/shop-evening-dress-1-model.webp",
+                "./assets/images/shop-evening-dress-1-back.webp",
+                "./assets/images/shop-evening-dress-1-closeup.webp"
+            ],
+            "#E6E6FA": [
+                "./assets/images/shop-evening-dress-2-front.webp",
+                "./assets/images/shop-evening-dress-2-model.webp",
+                "./assets/images/shop-evening-dress-2-back.webp",
+                "./assets/images/shop-evening-dress-2-closeup.webp"
+            ]
+        },
+        "price": 65.0,
+        "oldPrice": 75.99,
+        "swatches": [
+            "#FFFFFF",
+            "#E6E6FA"
+        ],
+        "description": "Вишукана сукня з V-подібним вирізом та легкими рукавами.",
+        "collections": [
+            "exclusive"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Різнокольорова куртка",
+        "image": "./assets/images/shop-jacket-2-front.webp",
+        "images": [
+            "./assets/images/shop-jacket-2-front.webp",
+            "./assets/images/shop-jacket-2-model.webp",
+            "./assets/images/shop-jacket-2-back.webp",
+            "./assets/images/shop-jacket-2-closeup.webp"
+        ],
+        "colorImages": {
+            "#FF6C6C": [
+                "./assets/images/shop-jacket-1-front.webp",
+                "./assets/images/shop-jacket-1-model.webp",
+                "./assets/images/shop-jacket-1-back.webp",
+                "./assets/images/shop-jacket-1-closeup.webp"
+            ]
+        },
+        "price": 159.9,
+        "swatches": [
+            "#FF6C6C"
+        ],
+        "description": "Яскрава куртка в кольоровий квадрат.",
+        "collections": [
+            "exclusive"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Піджак",
+        "image": "./assets/images/shop-blazer-2-front.webp",
+        "images": [
+            "./assets/images/shop-blazer-2-front.webp",
+            "./assets/images/shop-blazer-2-model.webp",
+            "./assets/images/shop-blazer-2-back.webp",
+            "./assets/images/shop-blazer-2-closeup.webp"
+        ],
+        "colorImages": {
+            "#F5F5DC": [
+                "./assets/images/shop-blazer-2-front.webp",
+                "./assets/images/shop-blazer-2-model.webp",
+                "./assets/images/shop-blazer-2-back.webp",
+                "./assets/images/shop-blazer-2-closeup.webp"
+            ],
+            "#D2B48C": [
+                "./assets/images/shop-blazer-1-front.webp",
+                "./assets/images/shop-blazer-1-model.webp",
+                "./assets/images/shop-blazer-1-back.webp",
+                "./assets/images/shop-blazer-1-closeup.webp"
+            ]
+        },
+        "price": 175.0,
+        "swatches": [
+            "#F5F5DC",
+            "#D2B48C"
+        ],
+        "description": "Стильний піджак. Чудовий вибір для офісу або зустрічі.",
+        "collections": [
+            "exclusive"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Бавовняна блуза",
+        "image": "./assets/images/shop-blouse-1-front.webp",
+        "images": [
+            "./assets/images/shop-blouse-1-front.webp",
+            "./assets/images/shop-blouse-1-model.webp",
+            "./assets/images/shop-blouse-1-back.webp",
+            "./assets/images/shop-blouse-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#ffffff": [
+                "./assets/images/shop-blouse-1-front.webp",
+                "./assets/images/shop-blouse-1-model.webp",
+                "./assets/images/shop-blouse-1-back.webp",
+                "./assets/images/shop-blouse-1-closeup.webp"
+            ]
+        },
+        "price": 42.5,
+        "swatches": [
+            "#ffffff"
+        ],
+        "description": "Елегантна блуза з легкими рукавами-воланами.",
+        "collections": [
+            "spring-sale",
+            "summer"
+        ],
+        "oldPrice": 54.99
+    },
+    {
+        "id": 17,
+        "name": "В'язаний светр та шапка",
+        "image": "./assets/images/shop-sweater-1-front.webp",
+        "images": [
+            "./assets/images/shop-sweater-1-front.webp",
+            "./assets/images/shop-sweater-1-model.webp",
+            "./assets/images/shop-sweater-1-back.webp",
+            "./assets/images/shop-sweater-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#8B4513": [
+                "./assets/images/shop-sweater-1-front.webp",
+                "./assets/images/shop-sweater-1-model.webp",
+                "./assets/images/shop-sweater-1-back.webp",
+                "./assets/images/shop-sweater-1-closeup.webp"
+            ],
+            "#A0522D": [
+                "./assets/images/shop-sweater-2-front.webp",
+                "./assets/images/shop-sweater-2-model.webp",
+                "./assets/images/shop-sweater-2-back.webp",
+                "./assets/images/shop-sweater-2-closeup.webp"
+            ]
+        },
+        "price": 49.9,
+        "oldPrice": 100.0,
+        "swatches": [
+            "#8B4513",
+            "#A0522D"
+        ],
+        "description": "Теплий в'язаний комплект зі светра та шапки.",
+        "collections": [
+            "exclusive"
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Вінтажна футболка",
+        "image": "./assets/images/shop-vintage-tshirt-2-front.webp",
+        "images": [
+            "./assets/images/shop-vintage-tshirt-2-front.webp",
+            "./assets/images/shop-vintage-tshirt-2-model.webp",
+            "./assets/images/shop-vintage-tshirt-2-back.webp",
+            "./assets/images/shop-vintage-tshirt-2-closeup.webp"
+        ],
+        "colorImages": {
+            "#FFFFFF": [
+                "./assets/images/shop-vintage-tshirt-2-front.webp",
+                "./assets/images/shop-vintage-tshirt-2-model.webp",
+                "./assets/images/shop-vintage-tshirt-2-back.webp",
+                "./assets/images/shop-vintage-tshirt-2-closeup.webp"
+            ],
+            "#000000": [
+                "./assets/images/shop-vintage-tshirt-1-front.webp",
+                "./assets/images/shop-vintage-tshirt-1-model.webp",
+                "./assets/images/shop-vintage-tshirt-1-back.webp",
+                "./assets/images/shop-vintage-tshirt-1-closeup.webp"
+            ]
+        },
+        "price": 24.0,
+        "swatches": [
+            "#FFFFFF",
+            "#000000"
+        ],
+        "description": "Біла футболка. Класичний вінтажний образ.",
+        "collections": [
+            "summer"
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Сукня з квітковим принтом",
+        "image": "./assets/images/shop-flower-print-dress-3-front.webp",
+        "images": [
+            "./assets/images/shop-flower-print-dress-3-front.webp",
+            "./assets/images/shop-flower-print-dress-3-model.webp",
+            "./assets/images/shop-flower-print-dress-3-back.webp",
+            "./assets/images/shop-flower-print-dress-3-closeup.webp"
+        ],
+        "colorImages": {
+            "#8B0000": [
+                "./assets/images/shop-flower-print-dress-4-front.webp",
+                "./assets/images/shop-flower-print-dress-4-model.webp",
+                "./assets/images/shop-flower-print-dress-4-back.webp",
+                "./assets/images/shop-flower-print-dress-4-closeup.webp"
+            ],
+            "#2F4F4F": [
+                "./assets/images/shop-flower-print-dress-1-front.webp",
+                "./assets/images/shop-flower-print-dress-1-model.webp",
+                "./assets/images/shop-flower-print-dress-1-back.webp",
+                "./assets/images/shop-flower-print-dress-1-closeup.webp"
+            ],
+            "#191970": [
+                "./assets/images/shop-flower-print-dress-2-front.webp",
+                "./assets/images/shop-flower-print-dress-2-model.webp",
+                "./assets/images/shop-flower-print-dress-2-back.webp",
+                "./assets/images/shop-flower-print-dress-2-closeup.webp"
+            ]
+        },
+        "price": 39.99,
+        "swatches": [
+            "#8B0000",
+            "#2F4F4F",
+            "#191970"
+        ],
+        "description": "Яскрава та легка сукня з квітковим принтом.",
+        "collections": [
+            "spring-sale",
+            "summer"
+        ],
+        "oldPrice": 45.99
+    },
+    {
+        "id": 20,
+        "name": "Водолазка",
+        "image": "./assets/images/shop-turtleneck-1-front.webp",
+        "images": [
+            "./assets/images/shop-turtleneck-1-front.webp",
+            "./assets/images/shop-turtleneck-1-model.webp",
+            "./assets/images/shop-turtleneck-1-back.webp",
+            "./assets/images/shop-turtleneck-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#ffffff": [
+                "./assets/images/shop-turtleneck-1-front.webp",
+                "./assets/images/shop-turtleneck-1-model.webp",
+                "./assets/images/shop-turtleneck-1-back.webp",
+                "./assets/images/shop-turtleneck-1-closeup.webp"
+            ]
+        },
+        "price": 34.0,
+        "swatches": [
+            "#ffffff"
+        ],
+        "description": "Базова водолазка. М'яка та приємна до тіла.",
+        "collections": [
+            "exclusive"
+        ]
+    },
+    {
+        "id": 21,
+        "name": "Брючний костюм",
+        "image": "./assets/images/shop-suit-1-front.webp",
+        "images": [
+            "./assets/images/shop-suit-1-front.webp",
+            "./assets/images/shop-suit-1-model.webp",
+            "./assets/images/shop-suit-1-back.webp",
+            "./assets/images/shop-suit-1-closeup.webp"
+        ],
+        "colorImages": {
+            "#5F9EA0": [
+                "./assets/images/shop-suit-1-front.webp",
+                "./assets/images/shop-suit-1-model.webp",
+                "./assets/images/shop-suit-1-back.webp",
+                "./assets/images/shop-suit-1-closeup.webp"
+            ]
+        },
+        "price": 115.0,
+        "swatches": [
+            "#5F9EA0"
+        ],
+        "description": "Яскравий костюм для впевненої в собі жінки.",
+        "collections": [
+            "exclusive"
+        ]
+    }
+]

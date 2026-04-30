@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформлення замовлення - FASCO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./assets/styles/styles.css">
+    <link rel="stylesheet" href="./assets/styles/cart.css">
+    <link rel="stylesheet" href="./assets/styles/checkout.css">
+    <link rel="icon" href="./assets/images/shop_icon.webp">
+</head>
+
+<body class="checkout-page">
+
+    <!-- PAGE LOADER -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-logo font-title">FASCO</div>
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU (outside nav so position:fixed works) -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu-panel" id="mobileMenuPanel">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-logo font-title">FASCO</span>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Закрити">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+        <nav class="mobile-menu-nav">
+            <a href="index.html" class="mobile-menu-link"><i class="fa-solid fa-house"></i><span>Головна</span></a>
+            <a href="shop.html" class="mobile-menu-link"><i class="fa-solid fa-store"></i><span>Магазин</span></a>
+        </nav>
+        <div class="mobile-menu-auth-section">
+            <a href="signin.html" class="mobile-menu-login"><i class="fa-regular fa-user"></i><span>Увійти</span></a>
+            <a href="signup.html" class="mobile-menu-register"><i
+                    class="fa-solid fa-user-plus"></i><span>Зареєструватися</span></a>
+        </div>
+        <div class="mobile-menu-gap"></div>
+        <div class="mobile-menu-tools-section">
+            <a href="#" id="mobileSearchBtn" class="mobile-menu-tool-link"><i
+                    class="fa-solid fa-magnifying-glass"></i><span>Пошук</span></a>
+            <a href="#" id="mobileWishlistBtn" class="mobile-menu-tool-link"><i
+                    class="fa-regular fa-heart"></i><span>Улюблене</span></a>
+            <a href="cart.html" class="mobile-menu-tool-link"><i
+                    class="fa-solid fa-bag-shopping"></i><span>Кошик</span></a>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <section class="header-section">
+        <header class="header d-flex">
+            <div class="content-wrap d-flex w-full justify-between items-center">
+                <div class="logo font-title">
+                    <a href="index.html" class="title-color">FASCO</a>
+                </div>
+                <div id="burgerMenu" class="burger-menu">
+                    <i id="openIcon" class="fa-solid fa-bars"></i>
+                    <i id="closeIcon" class="fa-solid fa-xmark d-none"></i>
+                </div>
+                <nav id="headerNav" class="header-nav d-flex">
+                    <ul class="desktop-nav-links">
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="shop.html">Магазин</a></li>
+                        <li><a href="shop.html">Товари</a></li>
+                        <li><a href="#">Сторінки <i class="fa-solid fa-chevron-down" style="font-size:0.75em;"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="header-tools">
+                    <li><a href="#" id="searchToggleBtn" aria-label="Пошук"><i
+                                class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li><a href="signin.html" aria-label="Акаунт"><i class="fa-regular fa-user"></i></a></li>
+                    <li><a href="#" id="wishlistToggleBtn" class="wishlist-tool-btn" aria-label="Обране">
+                            <i class="fa-regular fa-heart"></i>
+                            <span class="wishlist-badge" id="wishlistBadge" style="display:none;">0</span>
+                        </a></li>
+                    <li><a href="cart.html" class="cart-tool-wrapper" aria-label="Кошик">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                            <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+                        </a></li>
+                </ul>
+            </div>
+        </header>
+    </section>
+
+    <main>
+        <section class="checkout-page-section">
+            <div class="checkout-page-header">
+                <h1 class="checkout-page-title font-title">Оформлення замовлення</h1>
+                <div class="checkout-page-breadcrumb">
+                    <a href="index.html">Головна</a>
+                    <i class="fa-solid fa-chevron-right bc-sep"></i>
+                    <a href="cart.html">Кошик</a>
+                    <i class="fa-solid fa-chevron-right bc-sep"></i>
+                    <span>Оформлення</span>
+                </div>
+            </div>
+
+            <form id="checkoutForm" class="checkout-grid" novalidate>
+                <div class="checkout-form">
+                    <!-- CONTACT -->
+                    <section class="checkout-block">
+                        <div class="checkout-block-head">
+                            <h2 class="checkout-block-title font-title">Контакт</h2>
+                            <p class="checkout-account-link">Маєте акаунт? <a href="signin.html">Увійти</a></p>
+                        </div>
+                        <input type="email" id="ck-email" class="checkout-input" placeholder="Email" required>
+                        <label class="checkout-checkbox">
+                            <input type="checkbox" checked>
+                            <span class="checkout-checkbox-mark"></span>
+                            <span>Надсилати мені новини та ексклюзивні пропозиції</span>
+                        </label>
+                    </section>
+
+                    <!-- DELIVERY -->
+                    <section class="checkout-block">
+                        <h2 class="checkout-block-title font-title">Доставка</h2>
+                        <div class="checkout-select-wrap">
+                            <select id="ck-country" class="checkout-input checkout-select" required>
+                                <option value="" disabled selected>Країна / Регіон</option>
+                                <option>Україна</option>
+                                <option>Польща</option>
+                                <option>Німеччина</option>
+                                <option>Чехія</option>
+                                <option>Литва</option>
+                                <option>США</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down checkout-select-caret"></i>
+                        </div>
+                        <div class="checkout-row-2">
+                            <input type="text" id="ck-firstname" class="checkout-input" placeholder="Ім'я" required>
+                            <input type="text" id="ck-lastname" class="checkout-input" placeholder="Прізвище" required>
+                        </div>
+                        <input type="text" id="ck-address" class="checkout-input" placeholder="Адреса" required>
+                        <div class="checkout-row-2">
+                            <input type="text" id="ck-city" class="checkout-input" placeholder="Місто" required>
+                            <input type="text" id="ck-postal" class="checkout-input" placeholder="Поштовий індекс"
+                                required>
+                        </div>
+                        <label class="checkout-checkbox">
+                            <input type="checkbox">
+                            <span class="checkout-checkbox-mark"></span>
+                            <span>Зберегти ці дані для наступних покупок</span>
+                        </label>
+                    </section>
+
+                    <!-- PAYMENT -->
+                    <section class="checkout-block">
+                        <h2 class="checkout-block-title font-title">Оплата</h2>
+
+                        <div class="payment-methods">
+                            <label class="payment-method is-active">
+                                <input type="radio" name="payment-method" value="card" checked>
+                                <span class="payment-radio"></span>
+                                <span class="payment-label">Кредитна картка</span>
+                                <span class="payment-icons">
+                                    <span class="pi pi-visa">VISA</span>
+                                    <span class="pi pi-mc">
+                                        <span class="pi-mc-l"></span><span class="pi-mc-r"></span>
+                                    </span>
+                                    <span class="pi pi-amex">AMEX</span>
+                                </span>
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment-method" value="apple">
+                                <span class="payment-radio"></span>
+                                <span class="payment-label">Apple Pay</span>
+                                <span class="payment-icons"><i class="fa-brands fa-apple-pay"></i></span>
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment-method" value="cod">
+                                <span class="payment-radio"></span>
+                                <span class="payment-label">Готівкою при отриманні</span>
+                                <span class="payment-icons"><i class="fa-solid fa-money-bill-wave"></i></span>
+                            </label>
+                        </div>
+
+                        <div class="payment-card-fields" id="paymentCardFields">
+                            <div class="checkout-input-wrap">
+                                <input type="text" id="ck-cardnum" class="checkout-input" placeholder="Номер картки"
+                                    inputmode="numeric" autocomplete="cc-number" maxlength="23">
+                                <i class="fa-solid fa-lock checkout-input-icon"></i>
+                            </div>
+                            <div class="checkout-row-2">
+                                <input type="text" id="ck-exp" class="checkout-input" placeholder="Термін дії (MM/YY)"
+                                    inputmode="numeric" autocomplete="cc-exp" maxlength="5">
+                                <input type="text" id="ck-cvc" class="checkout-input" placeholder="CVV / CVC"
+                                    inputmode="numeric" autocomplete="cc-csc" maxlength="4">
+                            </div>
+                            <input type="text" id="ck-cardholder" class="checkout-input"
+                                placeholder="Ім'я власника картки" autocomplete="cc-name">
+                            <label class="checkout-checkbox">
+                                <input type="checkbox">
+                                <span class="checkout-checkbox-mark"></span>
+                                <span>Зберегти картку для наступних покупок</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn checkout-pay-btn">
+                            <i class="fa-solid fa-lock"></i>
+                            <span>Оплатити зараз</span>
+                        </button>
+                        <p class="checkout-secure-note">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Безпечне та зашифроване оформлення
+                        </p>
+                    </section>
+                </div>
+
+                <aside class="checkout-summary">
+                    <h2 class="checkout-block-title font-title">Ваше замовлення</h2>
+
+                    <div class="checkout-summary-items" id="checkoutSummaryItems">
+                        <!-- JS populates from cart; fallback demo items below -->
+                    </div>
+
+                    <div class="checkout-promo">
+                        <input type="text" id="ck-promo" class="checkout-input" placeholder="Промокод">
+                        <button type="button" id="ck-promo-apply" class="btn checkout-promo-btn">Застосувати</button>
+                    </div>
+                    <p class="checkout-promo-msg" id="ckPromoMsg"></p>
+
+                    <div class="checkout-totals">
+                        <div class="checkout-total-row">
+                            <span>Підсумок</span>
+                            <span id="ckSubtotal">$0.00</span>
+                        </div>
+                        <div class="checkout-total-row" id="ckDiscountRow" style="display:none;">
+                            <span>Знижка</span>
+                            <span id="ckDiscount">-$0.00</span>
+                        </div>
+                        <div class="checkout-total-row">
+                            <span>Доставка</span>
+                            <span id="ckShipping">Безкоштовно</span>
+                        </div>
+                        <div class="checkout-totals-divider"></div>
+                        <div class="checkout-total-row checkout-total-row--final">
+                            <span>Разом</span>
+                            <span id="ckTotal">$0.00</span>
+                        </div>
+                    </div>
+                </aside>
+            </form>
+
+            <p class="checkout-copyright">Copyright © 2026 FASCO. Всі права захищені.</p>
+        </section>
+
+        <section class="subscribe">
+            <img class="subscribe-photos" src="./assets/images/subscribe-1.webp" alt="">
+            <div class="subscribe-wrapper">
+                <div class="subscribe-card">
+                    <div class="text-box">
+                        <h2>Підпишіться на нашу розсилку</h2>
+                        <p class="regular-text">Новини, знижки та поради без спаму!</p>
+                    </div>
+                    <form><input class="company-email" type="email" placeholder="michael@ymail.com"></form>
+                </div>
+                <a class="btn btn-subscribe" href="#">Підписатися зараз</a>
+            </div>
+            <img class="subscribe-photos" src="./assets/images/subscribe-2.webp" alt="">
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="logo font-title"><a href="index.html" class="title-color">FASCO</a></div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#" data-modal-target="myModal">Центр підтримки</a></li>
+                    <li><a href="#" data-modal-target="paymentModal">Оплата</a></li>
+                    <li><a href="#" data-modal-target="contactsModal">Контакти</a></li>
+                    <li><a href="#" data-modal-target="careersModal">Кар'єра</a></li>
+                    <li><a href="#" data-modal-target="blogModal">Блог</a></li>
+                    <li><a href="#" data-modal-target="faqModal">Часті запитання</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="reserved-rights">Copyright © 2026 FASCO. Всі права захищені.</p>
+    </footer>
+
+
+    <!-- WISHLIST DRAWER -->
+    <div id="wishlistDrawer" class="wishlist-drawer">
+        <div class="wishlist-drawer-overlay" id="wishlistDrawerOverlay"></div>
+        <div class="wishlist-drawer-panel">
+            <div class="wishlist-drawer-header">
+                <div class="wishlist-drawer-title">
+                    <i class="fa-regular fa-heart"></i>
+                    <h3>Обране</h3>
+                    <span class="wishlist-items-count" id="wishlistItemsCount">0</span>
+                </div>
+                <button class="wishlist-drawer-close" id="wishlistDrawerClose"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="wishlist-drawer-items" id="wishlistDrawerItems">
+                <div class="wishlist-empty" id="wishlistEmpty">
+                    <div class="wishlist-empty-icon"><i class="fa-regular fa-heart"></i></div>
+                    <p>Ваш список обраного порожній</p>
+                    <a href="shop.html" class="btn-browse-products">Переглянути товари</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEARCH OVERLAY -->
+    <div id="searchOverlay" class="search-overlay">
+        <div class="search-overlay-inner">
+            <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass search-icon-inner"></i>
+                <input type="text" id="searchInput" placeholder="Пошук товарів..." autocomplete="off">
+                <button id="searchClose" class="search-close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="search-results-wrap" id="searchResultsWrap">
+                <p class="search-hint" id="searchHint">Введіть назву товару для пошуку...</p>
+                <div class="search-results-grid" id="searchResultsGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sticky-items">
+        <div class="sticky-item sticky-item-circle">
+            <a href="#" class="sticky-link" id="scrollToTop">
+                <img src="assets/icons/Vector.svg" alt="Вгору" class="sticky-img">
+            </a>
+        </div>
+    </div>
+
+    <script src="assets/scripts/script.js"></script>
+</body>
+
+</html>
