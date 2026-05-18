@@ -446,7 +446,7 @@ body main section.subscribe {
     }
 
     .cart-page-item-remove.desktop-remove {
-        display: inline;
+        display: flex;
         background: none;
         border: none;
         cursor: pointer;

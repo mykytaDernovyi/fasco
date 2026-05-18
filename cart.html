@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="stylesheet" href="./assets/styles/cart.css">
     <link rel="icon" href="./assets/images/shop_icon.webp">
+    <script type="module" src="./assets/scripts/firebase.js"></script>
 </head>
 
 <body class="cart-page">
@@ -33,8 +34,21 @@
         <nav class="mobile-menu-nav">
             <a href="index.html" class="mobile-menu-link"><i class="fa-solid fa-house"></i><span>Головна</span></a>
             <a href="shop.html" class="mobile-menu-link"><i class="fa-solid fa-store"></i><span>Магазин</span></a>
+            <div class="mobile-menu-collapse">
+                <button type="button" class="mobile-menu-link mobile-menu-toggle" aria-expanded="false">
+                    <i class="fa-solid fa-layer-group"></i><span>Колекції</span>
+                    <i class="fa-solid fa-chevron-down mobile-menu-chevron" aria-hidden="true"></i>
+                </button>
+                <div class="mobile-submenu">
+                    <a href="shop.html?collection=exclusive" class="mobile-submenu-link">Ексклюзивна колекція</a>
+                    <a href="shop.html?collection=spring-sale" class="mobile-submenu-link">Весняний розпродаж</a>
+                    <a href="shop.html?collection=summer" class="mobile-submenu-link">Літня колекція</a>
+                    <a href="shop.html?collection=accessories" class="mobile-submenu-link">Аксесуари</a>
+                </div>
+            </div>
+            <a href="#" class="mobile-menu-link" data-modal-target="contactsModal"><i class="fa-regular fa-envelope"></i><span>Контакти</span></a>
         </nav>
-        <div class="mobile-menu-auth-section">
+        <div class="mobile-menu-auth-section" id="mobileAuthSection">
             <a href="signin.html" class="mobile-menu-login"><i class="fa-regular fa-user"></i><span>Увійти</span></a>
             <a href="signup.html" class="mobile-menu-register"><i
                     class="fa-solid fa-user-plus"></i><span>Зареєструватися</span></a>
@@ -65,15 +79,22 @@
                     <ul class="desktop-nav-links">
                         <li><a href="index.html">Головна</a></li>
                         <li><a href="shop.html">Магазин</a></li>
-                        <li><a href="shop.html">Товари</a></li>
-                        <li><a href="#">Сторінки <i class="fa-solid fa-chevron-down" style="font-size:0.75em;"></i></a>
+                        <li class="has-dropdown">
+                            <a href="shop.html#collections" class="dropdown-trigger">Колекції <i class="fa-solid fa-chevron-down dropdown-arrow" aria-hidden="true"></i></a>
+                            <ul class="nav-dropdown" role="menu">
+                                <li role="none"><a role="menuitem" href="shop.html?collection=exclusive">Ексклюзивна колекція</a></li>
+                                <li role="none"><a role="menuitem" href="shop.html?collection=spring-sale">Весняний розпродаж</a></li>
+                                <li role="none"><a role="menuitem" href="shop.html?collection=summer">Літня колекція</a></li>
+                                <li role="none"><a role="menuitem" href="shop.html?collection=accessories">Аксесуари</a></li>
+                            </ul>
                         </li>
+                        <li><a href="#" data-modal-target="contactsModal">Контакти</a></li>
                     </ul>
                 </nav>
                 <ul class="header-tools">
                     <li><a href="#" id="searchToggleBtn" aria-label="Пошук"><i
                                 class="fa-solid fa-magnifying-glass"></i></a></li>
-                    <li><a href="signin.html" aria-label="Акаунт"><i class="fa-regular fa-user"></i></a></li>
+                    <li class="user-tool-wrapper" id="userToolWrapper"><a href="signin.html" id="userToolBtn" aria-label="Акаунт"><i class="fa-regular fa-user"></i></a></li>
                     <li><a href="#" id="wishlistToggleBtn" class="wishlist-tool-btn" aria-label="Обране">
                             <i class="fa-regular fa-heart"></i>
                             <span class="wishlist-badge" id="wishlistBadge" style="display:none;">0</span>
@@ -134,7 +155,7 @@
                         <span>Підсумок</span>
                         <span id="cartPageSubtotal">$0.00</span>
                     </div>
-                    <button class="btn cart-checkout-btn" id="cartCheckoutBtn">Оформити замовлення</button>
+                    <a href="checkout.html" class="btn cart-checkout-btn" id="cartCheckoutBtn">Оформити замовлення</a>
                 </div>
             </div>
         </section>
@@ -159,31 +180,17 @@
             <div class="logo font-title"><a href="index.html" class="title-color">FASCO</a></div>
             <nav class="footer-nav">
                 <ul>
-                    <li><a href="#" id="supportBtn">Центр підтримки</a></li>
-                    <li><a href="#">Оплата</a></li>
-                    <li><a href="#">Контакти</a></li>
-                    <li><a href="#">Кар'єра</a></li>
-                    <li><a href="#">Блог</a></li>
-                    <li><a href="#">Часті запитання</a></li>
+                    <li><a href="#" data-modal-target="myModal">Центр підтримки</a></li>
+                    <li><a href="#" data-modal-target="paymentModal">Оплата</a></li>
+                    <li><a href="#" data-modal-target="contactsModal">Контакти</a></li>
+                    <li><a href="#" data-modal-target="careersModal">Кар'єра</a></li>
+                    <li><a href="#" data-modal-target="blogModal">Блог</a></li>
+                    <li><a href="#" data-modal-target="faqModal">Часті запитання</a></li>
                 </ul>
             </nav>
         </div>
         <p class="reserved-rights">Copyright © 2026 FASCO. Всі права захищені.</p>
     </footer>
-
-    <div id="myModal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 class="font-title">Напишіть нам</h2>
-            <p class="regular-text">Маєте запитання? Заповніть форму, і ми зв'яжемося з вами!</p>
-            <form class="modal-form">
-                <input type="text" placeholder="Ваше ім'я" required>
-                <input type="email" placeholder="Ваш Email" required>
-                <textarea placeholder="Ваше повідомлення" rows="4" required></textarea>
-                <button type="submit" class="btn btn-modal">Надіслати</button>
-            </form>
-        </div>
-    </div>
 
     <!-- WISHLIST DRAWER -->
     <div id="wishlistDrawer" class="wishlist-drawer">

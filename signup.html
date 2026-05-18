@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="./assets/styles/styles.css">
     <link rel="icon" href="./assets/images/shop_icon.webp">
+    <script type="module" src="./assets/scripts/firebase.js"></script>
+    <script type="module" src="./assets/scripts/auth.js"></script>
 </head>
 
 <body class="auth-page">
@@ -30,11 +32,11 @@
                 <h1>Створити акаунт</h1>
 
                 <div class="social-login">
-                    <button class="social-btn">
+                    <button type="button" class="social-btn social-btn-google">
                         <img class="google-icon" src="./assets/images/google-icon.webp" alt="Google">
                         Реєстрація через Google
                     </button>
-                    <button class="social-btn">
+                    <button type="button" class="social-btn social-btn-email">
                         <img class="email-icon" src="./assets/images/email-icon.webp" alt="Email">
                         Реєстрація через Email
                     </button>
