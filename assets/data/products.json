@@ -633,10 +633,10 @@
     ],
     "colorImages": {
       "#8B0000": [
-        "./assets/images/shop-flower-print-dress-4-front.webp",
-        "./assets/images/shop-flower-print-dress-4-model.webp",
-        "./assets/images/shop-flower-print-dress-4-back.webp",
-        "./assets/images/shop-flower-print-dress-4-closeup.webp"
+        "./assets/images/shop-flower-print-dress-3-front.webp",
+        "./assets/images/shop-flower-print-dress-3-model.webp",
+        "./assets/images/shop-flower-print-dress-3-back.webp",
+        "./assets/images/shop-flower-print-dress-3-closeup.webp"
       ],
       "#2F4F4F": [
         "./assets/images/shop-flower-print-dress-1-front.webp",
