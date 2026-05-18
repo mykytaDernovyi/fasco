@@ -430,6 +430,7 @@ SearchOverlay.init();
 document.addEventListener('DOMContentLoaded', () => {
     const loader = $('pageLoader');
     if (!loader) return;
+    if ($('product-title')) return;
     const hide = () => loader.classList.add('hidden');
     if (document.readyState === 'complete') hide();
     else { window.addEventListener('load', hide); setTimeout(hide, 1200); }
@@ -1105,6 +1106,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         const mainImg = $('product-main-image');
         const thumbsEl = $('product-thumbnails');
 
+        const preloadImg = (src) => new Promise(resolve => {
+            if (!src) return resolve();
+            const img = new Image();
+            img.onload = img.onerror = () => resolve();
+            img.src = src;
+            setTimeout(resolve, 2000);
+        });
+
         function loadGallery(images) {
             if (!images?.length) return;
             if (mainImg) mainImg.src = images[0];
@@ -1121,6 +1130,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             });
         }
         const defaultImages = product.images?.length ? product.images : [product.image || ''];
+        await preloadImg(defaultImages[0]);
         loadGallery(defaultImages);
 
         // Colors + Sizes (stock у форматі { color: { size: qty } } лежить у Firestore).
