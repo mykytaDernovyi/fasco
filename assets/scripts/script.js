@@ -1103,8 +1103,31 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         // Gallery
-        const mainImg = $('product-main-image');
         const thumbsEl = $('product-thumbnails');
+        let currentImages = [];
+        let activeImageIndex = 0;
+
+        function updateMainImage(index) {
+            if (!currentImages?.length) return;
+            activeImageIndex = (index + currentImages.length) % currentImages.length;
+            
+            const track = document.querySelector('.gallery-track');
+            if (track) {
+                track.style.transform = `translateX(-${activeImageIndex * 100}%)`;
+            }
+
+            if (thumbsEl) {
+                const thumbs = thumbsEl.querySelectorAll('img');
+                thumbs.forEach((t, idx) => {
+                    if (idx === activeImageIndex) {
+                        t.classList.add('active');
+                        t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    } else {
+                        t.classList.remove('active');
+                    }
+                });
+            }
+        }
 
         const preloadImg = (src) => new Promise(resolve => {
             if (!src) return resolve();
@@ -1116,19 +1139,60 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         function loadGallery(images) {
             if (!images?.length) return;
-            if (mainImg) mainImg.src = images[0];
+            currentImages = images;
+            activeImageIndex = 0;
+
+            const mainImageContainer = document.querySelector('.main-image');
+            if (mainImageContainer) {
+                let track = mainImageContainer.querySelector('.gallery-track');
+                if (!track) {
+                    track = document.createElement('div');
+                    track.className = 'gallery-track';
+                    mainImageContainer.insertBefore(track, mainImageContainer.firstChild);
+                }
+                
+                track.innerHTML = currentImages.map((src, i) =>
+                    `<img src="${src}" alt="Product Image ${i + 1}" class="gallery-slide-img">`
+                ).join('');
+                
+                const staticImg = $('product-main-image');
+                if (staticImg) {
+                    staticImg.remove();
+                }
+            }
+
             if (!thumbsEl) return;
-            thumbsEl.innerHTML = images.map((src, i) =>
+            thumbsEl.innerHTML = currentImages.map((src, i) =>
                 `<img src="${src}" class="${i === 0 ? 'active' : ''}" alt="thumb ${i + 1}">`
             ).join('');
-            thumbsEl.querySelectorAll('img').forEach(thumb => {
+            thumbsEl.querySelectorAll('img').forEach((thumb, idx) => {
                 thumb.addEventListener('click', function () {
-                    thumbsEl.querySelectorAll('img').forEach(t => t.classList.remove('active'));
-                    this.classList.add('active');
-                    if (mainImg) mainImg.src = this.src;
+                    updateMainImage(idx);
                 });
             });
+
+            updateMainImage(0);
         }
+
+        const mainImgContainer = document.querySelector('.main-image');
+        if (mainImgContainer) {
+            let touchStartX = 0;
+            mainImgContainer.addEventListener('touchstart', e => {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: true });
+            mainImgContainer.addEventListener('touchend', e => {
+                if (!currentImages || currentImages.length <= 1) return;
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        updateMainImage(activeImageIndex + 1);
+                    } else {
+                        updateMainImage(activeImageIndex - 1);
+                    }
+                }
+            });
+        }
+
         const defaultImages = product.images?.length ? product.images : [product.image || ''];
         await preloadImg(defaultImages[0]);
         loadGallery(defaultImages);
