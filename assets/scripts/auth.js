@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     await whenReady();
     const page = location.pathname.split('/').pop().toLowerCase();
 
-    if (page === 'signin.html') {
+    if (page.includes('signin')) {
         const form = document.querySelector('form');
         bindEmailFocus('.social-btn-email', '#email');
         bindGoogle(document.querySelector('.social-btn-google'), form);

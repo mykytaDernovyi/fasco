@@ -1106,14 +1106,19 @@ document.addEventListener('DOMContentLoaded', async () => {
         const thumbsEl = $('product-thumbnails');
         let currentImages = [];
         let activeImageIndex = 0;
+        let isMobileLayout = window.innerWidth < 768;
 
         function updateMainImage(index) {
             if (!currentImages?.length) return;
             activeImageIndex = (index + currentImages.length) % currentImages.length;
             
             const track = document.querySelector('.gallery-track');
+            const staticImg = $('product-main-image');
+            
             if (track) {
                 track.style.transform = `translateX(-${activeImageIndex * 100}%)`;
+            } else if (staticImg) {
+                staticImg.src = currentImages[activeImageIndex];
             }
 
             if (thumbsEl) {
@@ -1137,20 +1142,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             setTimeout(resolve, 2000);
         });
 
-        function loadGallery(images) {
-            if (!images?.length) return;
-            currentImages = images;
-            activeImageIndex = 0;
-
+        function renderGalleryLayout() {
             const mainImageContainer = document.querySelector('.main-image');
-            if (mainImageContainer) {
+            if (!mainImageContainer || !currentImages?.length) return;
+
+            if (isMobileLayout) {
+                // Mobile: sliding track
                 let track = mainImageContainer.querySelector('.gallery-track');
                 if (!track) {
                     track = document.createElement('div');
                     track.className = 'gallery-track';
                     mainImageContainer.insertBefore(track, mainImageContainer.firstChild);
                 }
-                
                 track.innerHTML = currentImages.map((src, i) =>
                     `<img src="${src}" alt="Product Image ${i + 1}" class="gallery-slide-img">`
                 ).join('');
@@ -1159,7 +1162,40 @@ document.addEventListener('DOMContentLoaded', async () => {
                 if (staticImg) {
                     staticImg.remove();
                 }
+            } else {
+                // Desktop: static image
+                let staticImg = $('product-main-image');
+                if (!staticImg) {
+                    staticImg = document.createElement('img');
+                    staticImg.id = 'product-main-image';
+                    staticImg.alt = 'Product';
+                    mainImageContainer.insertBefore(staticImg, mainImageContainer.firstChild);
+                }
+                staticImg.src = currentImages[activeImageIndex] || currentImages[0];
+                
+                const track = mainImageContainer.querySelector('.gallery-track');
+                if (track) {
+                    track.remove();
+                }
             }
+            updateMainImage(activeImageIndex);
+        }
+
+        window.addEventListener('resize', () => {
+            const currentMobile = window.innerWidth < 768;
+            if (currentMobile !== isMobileLayout) {
+                isMobileLayout = currentMobile;
+                renderGalleryLayout();
+            }
+        });
+
+        function loadGallery(images) {
+            if (!images?.length) return;
+            currentImages = images;
+            activeImageIndex = 0;
+            isMobileLayout = window.innerWidth < 768;
+
+            renderGalleryLayout();
 
             if (!thumbsEl) return;
             thumbsEl.innerHTML = currentImages.map((src, i) =>
@@ -1824,7 +1860,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!form) return;
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const required = ['ck-email', 'ck-country', 'ck-firstname', 'ck-lastname', 'ck-address', 'ck-city', 'ck-postal'];
+            const required = ['ck-email', 'ck-country', 'ck-firstname', 'ck-lastname', 'ck-address', 'ck-city', 'ck-postal', 'ck-phone'];
             let firstInvalid = null;
             for (const id of required) {
                 const el = $(id);

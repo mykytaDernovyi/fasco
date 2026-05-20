@@ -54,6 +54,18 @@ section.promotion {
     transform: scale(1.03);
 }
 
+.main-image img#product-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.main-image:hover img#product-main-image {
+    transform: scale(1.03);
+}
+
 .thumbnails {
     display: flex;
     flex-direction: row;
