@@ -476,10 +476,24 @@ document.addEventListener('DOMContentLoaded', () => {
 // === SCROLL TO TOP ===
 
 document.addEventListener('DOMContentLoaded', () => {
-    $('scrollToTop')?.addEventListener('click', e => {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    const btn = $('scrollToTop');
+    const wrapper = btn?.closest('.sticky-item-circle');
+    if (btn && wrapper) {
+        const toggleScrollBtn = () => {
+            if (window.scrollY > 300) {
+                wrapper.classList.add('visible');
+            } else {
+                wrapper.classList.remove('visible');
+            }
+        };
+        window.addEventListener('scroll', toggleScrollBtn);
+        toggleScrollBtn();
+
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 });
 
 // === INFO MODALS (Support / Payment / Contacts / Careers / Blog / FAQ) ===
@@ -1621,11 +1635,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }, ANIM_MS + 60);
     }
 
-    nextBtn.addEventListener('click', next);
-    prevBtn.addEventListener('click', prev);
+    function resetAutoPlay() {
+        clearInterval(autoPlay);
+        autoPlay = setInterval(next, 5000);
+    }
+
+    nextBtn.addEventListener('click', () => { next(); resetAutoPlay(); });
+    prevBtn.addEventListener('click', () => { prev(); resetAutoPlay(); });
 
     dotEls.forEach((dot, i) => dot.addEventListener('click', () => {
         if (isSliding) return;
+        resetAutoPlay();
         const cur = ((currentIndex % total) + total) % total;
         let diff = (i - cur + total) % total;
         if (!diff) return;
@@ -1639,16 +1659,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let autoPlay = setInterval(next, 5000);
     gallery.addEventListener('mouseenter', () => clearInterval(autoPlay));
-    gallery.addEventListener('mouseleave', () => {
-        clearInterval(autoPlay);
-        autoPlay = setInterval(next, 5000);
-    });
+    gallery.addEventListener('mouseleave', resetAutoPlay);
 
     let touchStartX = 0;
     gallery.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
     gallery.addEventListener('touchend', e => {
         const diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) (diff > 0 ? next : prev)();
+        if (Math.abs(diff) > 50) {
+            (diff > 0 ? next : prev)();
+            resetAutoPlay();
+        }
     });
 });
 
@@ -1860,12 +1880,22 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!form) return;
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const method = form.querySelector('input[name="payment-method"]:checked')?.value || 'card';
             const required = ['ck-email', 'ck-country', 'ck-firstname', 'ck-lastname', 'ck-address', 'ck-city', 'ck-postal', 'ck-phone'];
+            if (method === 'card') {
+                required.push('ck-cardnum', 'ck-exp', 'ck-cvc', 'ck-cardholder');
+            }
             let firstInvalid = null;
             for (const id of required) {
                 const el = $(id);
                 if (!el) continue;
-                if (!el.value || (el.type === 'email' && !/^\S+@\S+\.\S+$/.test(el.value))) {
+                let invalid = !el.value.trim();
+                if (el.type === 'email' && !/^\S+@\S+\.\S+$/.test(el.value)) invalid = true;
+                if (id === 'ck-cardnum' && el.value.replace(/\s/g, '').length < 16) invalid = true;
+                if (id === 'ck-exp' && !/^\d{2}\/\d{2}$/.test(el.value)) invalid = true;
+                if (id === 'ck-cvc' && el.value.length < 3) invalid = true;
+
+                if (invalid) {
                     el.classList.add('is-invalid');
                     firstInvalid ??= el;
                 } else {

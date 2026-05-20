@@ -1202,6 +1202,16 @@ h2 {
     background: var(--main-background);
     border-radius: 50%;
     border: 2px solid var(--btn-color);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sticky-item-circle.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 .sticky-item-circle:hover {

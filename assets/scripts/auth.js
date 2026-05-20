@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    if (page === 'signup.html') {
+    if (page.includes('signup')) {
         const form = document.querySelector('form');
         bindEmailFocus('.social-btn-email', '#first-name');
         bindGoogle(document.querySelector('.social-btn-google'), form);
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    if (page === 'forgetpassword.html') {
+    if (page.includes('forgetpassword')) {
         const form = document.querySelector('form');
         form?.addEventListener('submit', async (e) => {
             e.preventDefault();
