@@ -7,7 +7,7 @@ import {
     updateProfile
 } from 'https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js';
 import {
-    getFirestore, doc, getDoc, setDoc, updateDoc,
+    getFirestore, doc, getDoc, setDoc, updateDoc, deleteDoc,
     collection, addDoc, serverTimestamp,
     query, where, getDocs, onSnapshot, runTransaction
 } from 'https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js';
@@ -43,6 +43,7 @@ const writeLocal = (key, value) => {
 
 const userDoc = (uid) => doc(db, 'users', uid);
 const stockDoc = (id) => doc(db, 'stock', String(id));
+const reviewsCol = (productId) => collection(db, 'reviews', String(productId), 'items');
 
 const cartKey = (it) => `${it.id}|${it.size || ''}|${it.color || ''}`;
 const wishKey = (it) => String(it.id);
@@ -278,6 +279,48 @@ async function decrementStock(items) {
     });
 }
 
+// === REVIEWS ===
+// Підколекція `reviews/{productId}/items/{reviewId}`.
+// Сортуємо на клієнті, щоб не плодити composite-індекси.
+
+function sortByDateDesc(arr) {
+    return arr.sort((a, b) => {
+        const ta = a.createdAt?.toMillis?.() || 0;
+        const tb = b.createdAt?.toMillis?.() || 0;
+        return tb - ta;
+    });
+}
+
+function watchReviews(productId, cb) {
+    return onSnapshot(reviewsCol(productId), (snap) => {
+        const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+        cb(sortByDateDesc(list));
+    });
+}
+
+async function addReview(productId, { rating, text }) {
+    if (!currentUser) throw new Error('Треба увійти, щоб залишити відгук.');
+    const r = Number(rating);
+    if (!r || r < 1 || r > 5) throw new Error('Поставте оцінку від 1 до 5.');
+    const body = (text || '').trim();
+    if (!body) throw new Error('Напишіть текст відгуку.');
+    const profile = currentProfile?.profile;
+    const name = [profile?.firstName, profile?.lastName].filter(Boolean).join(' ').trim()
+        || currentUser.displayName || currentUser.email?.split('@')[0] || 'Користувач';
+    await addDoc(reviewsCol(productId), {
+        userId: currentUser.uid,
+        userName: name,
+        rating: r,
+        text: body.slice(0, 1000),
+        createdAt: serverTimestamp(),
+    });
+}
+
+async function deleteReview(productId, reviewId) {
+    if (!currentUser) throw new Error('Треба увійти.');
+    await deleteDoc(doc(db, 'reviews', String(productId), 'items', reviewId));
+}
+
 // === AUTH STATE ===
 
 onAuthStateChanged(auth, async (user) => {
@@ -314,6 +357,7 @@ window.FascoApp = {
     updateUserProfile,
     saveOrder, listMyOrders,
     getStock, getAllStock, watchStock, decrementStock,
+    watchReviews, addReview, deleteReview,
     notifyCartChanged: scheduleRemoteSync,
     notifyWishlistChanged: scheduleRemoteSync,
 };
