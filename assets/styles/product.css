@@ -742,26 +742,14 @@ section.promotion {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
 }
 
-/* Stacked tabs: all tabs occupy the same grid cell so container height
-   is determined by the tallest tab, preventing page jump on switch. */
-.product-tabs-content {
-  display: grid;
-}
-
 .tab-content {
-  grid-area: 1 / 1;
-  padding: 4px 4px 8px;
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
+    padding: 4px 4px 8px;
+    display: none;
 }
 
 .tab-content.active {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: auto;
-  animation: tabFadeIn 0.35s ease;
+    display: block;
+    animation: tabFadeIn .5s ease;
 }
 
 @keyframes tabFadeIn {
