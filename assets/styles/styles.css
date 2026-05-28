@@ -1081,29 +1081,6 @@ h2 {
     color: var(--regular-text-color);
 }
 
-@media (max-width: 540px) {
-    .modal-content-info {
-        padding: 28px 22px;
-        border-radius: 14px;
-    }
-
-    .modal-content-info h2 {
-        font-size: 22px;
-    }
-
-    .modal-info-list li {
-        font-size: 13px;
-        gap: 12px;
-    }
-
-    .modal-info-list li i {
-        flex-basis: 34px;
-        width: 34px;
-        height: 34px;
-        font-size: 13px;
-    }
-}
-
 /* ================================================================
    ANIMATIONS (shared)
    ================================================================ */
@@ -3853,12 +3830,51 @@ body.auth-page {
     .hero-image-container:nth-of-type(4) {
         display: flex;
     }
+    .profile-row {
+        flex-direction: row;
+    }
+
+    .profile-row label {
+        flex: 1;
+    }
+}
+
+@media (max-width: 540px) {
+    .modal-content-info {
+        padding: 28px 22px;
+        border-radius: 14px;
+    }
+
+    .modal-content-info h2 {
+        font-size: 22px;
+    }
+
+    .modal-info-list li {
+        font-size: 13px;
+        gap: 12px;
+    }
+
+    .modal-info-list li i {
+        flex-basis: 34px;
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
 }
 
 /* ================================================================
    MEDIA QUERIES — 768px (tablet)
    ================================================================ */
 @media (min-width: 768px) {
+
+    .order-card-foot {
+        grid-template-columns: 1fr 1fr;
+    }
+    .order-meta {
+        border-top: none;
+        padding-top: 0;
+        text-align: right;
+    }
 
     .time-box,
     .timer-container {
@@ -4087,6 +4103,17 @@ body.auth-page {
         margin: 0;
         padding: 0;
         text-align: right;
+    }
+}
+
+/* Хід на мобайлі — header tools приховані */
+@media (max-width: 1023px) {
+    .header-tools {
+        display: none !important;
+    }
+
+    .header-nav {
+        display: none !important;
     }
 }
 
@@ -4506,17 +4533,6 @@ body.auth-page {
     }
 }
 
-/* Хід на мобайлі — header tools приховані */
-@media (max-width: 1023px) {
-    .header-tools {
-        display: none !important;
-    }
-
-    .header-nav {
-        display: none !important;
-    }
-}
-
 /* ================================================================
    AUTH FORM MESSAGES
    ================================================================ */
@@ -4788,16 +4804,6 @@ body.no-scroll { overflow: hidden; }
 .profile-modal-status.ok { color: #166534; }
 .profile-modal-status.err { color: #b91c1c; }
 
-@media (min-width: 480px) {
-    .profile-row {
-        flex-direction: row;
-    }
-
-    .profile-row label {
-        flex: 1;
-    }
-}
-
 /* Profile tabs + orders */
 .profile-modal-tabs {
     display: flex;
@@ -4954,17 +4960,6 @@ body.no-scroll { overflow: hidden; }
 
 .order-meta p { margin: 0 0 2px; }
 .order-promo { color: #888; font-size: 11px; }
-
-@media (min-width: 600px) {
-    .order-card-foot {
-        grid-template-columns: 1fr 1fr;
-    }
-    .order-meta {
-        border-top: none;
-        padding-top: 0;
-        text-align: right;
-    }
-}
 
 /* ================================================================
    NAV DROPDOWN (desktop) + MOBILE COLLECTIONS ACCORDION
